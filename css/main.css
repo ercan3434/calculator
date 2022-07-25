@@ -1,0 +1,62 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+.main{
+    display: flex;
+}
+
+.main div{
+    font-size: 25px;
+    padding: 25px;
+    background-color: rgb(0, 9, 133);
+    border-radius: 10%;
+    margin: 25px;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+}
+
+input{
+    font-size: 25px;
+    padding: 25px;
+    margin: 25px;
+    text-align: center;
+}
+
+#result{
+    font-size: 25px;
+    padding: 25px;
+    border-radius: 10%;
+    color: white;
+    background-color: rgb(1, 163, 163);
+    margin: 25px;
+    width: 100px;
+    text-align: center;
+    visibility: hidden;
+}
+
+.calculator{
+    display: flex;
+}
+
+.calculator div{
+    font-size: 25px;
+    padding: 25px 0;
+    border-radius: 10%;
+    margin: 25px 0;
+    width: 100px;
+    text-align: center;
+}

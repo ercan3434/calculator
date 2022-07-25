@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
+
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+    <div class="calculator">
+        <input type="number" id="inp1" placeholder="Sayı Giriniz...">
+        <div class="operator"></div>
+        <input type="number" id="inp2" placeholder="Sayı Giriniz...">
+        <div class="operator"></div>
+        <div id="result"></div>    
+    </div>
+
+    <div class="main">
+        <div onclick="addition()">TOPLA</div>
+        <div onclick="subtraction()">ÇIKAR</div>
+        <div onclick="multiplication()">ÇARP</div>
+        <div onclick="division()">BÖL</div>    
+    </div>
+
+
+
+
+    <script>
+
+        let input1 = document.getElementById('inp1');
+        let input2 = document.getElementById('inp2');
+        let operator = document.getElementsByClassName('operator');
+        let result = document.getElementById("result");
+
+        function addition(){
+            result.innerHTML = (Number(input1.value) + Number(input2.value)).toFixed(2); 
+            operator[0].innerHTML = '+';
+            operator[1].innerHTML = '=';
+            result.style.visibility = 'visible';
+        }
+        function subtraction(){
+            result.innerHTML = (Number(input1.value) - Number(input2.value)).toFixed(2); 
+            operator[0].innerHTML = '-';
+            operator[1].innerHTML = '=';
+            result.style.visibility = 'visible';
+
+        }
+        function multiplication(){
+            result.innerHTML = (Number(input1.value) * Number(input2.value)).toFixed(2); 
+            operator[0].innerHTML = '*';
+            operator[1].innerHTML = '=';
+            result.style.visibility = 'visible';
+
+        }
+        function division(){
+            result.innerHTML = (Number(input1.value) / Number(input2.value)).toFixed(2);; 
+            operator[0].innerHTML = '/';
+            operator[1].innerHTML = '=';
+            result.style.visibility = 'visible';
+        }
+    </script>
+</body>
+</html>
