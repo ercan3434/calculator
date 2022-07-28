@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Abstract" content="Calculator">
+    <meta name="Author" content="Ercan ÇİMEN">
+    <meta name="description" content="calculator">
+    <meta name="keywords" content="calculator">
     <title>Calculator</title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
 
@@ -11,57 +15,37 @@
 </head>
 <body>
 
-    <div class="calculator">
-        <input type="number" id="inp1" placeholder="Sayı Giriniz...">
-        <div class="operator"></div>
-        <input type="number" id="inp2" placeholder="Sayı Giriniz...">
-        <div class="operator"></div>
-        <div id="result"></div>    
+<br><br><br>
+
+
+    <div class="container">
+        <div class="calculator">
+            <div class="result">
+                <div class="inputMain">
+                    <div id="input1"></div>
+                    <div id="input2"></div>
+                </div>
+                <input type="number" onblur="this.focus()" autofocus onkeypress="return onlyNumberInput(event)" onpaste="return false" id="result">
+            </div>
+
+            <div class="operator">
+                <div class="addition" onclick="addition()">&#43;</div>
+                <div class="subtraction" onclick="subtraction()">&#8211;</div>
+                <div class="multiplication" onclick="multiplication()">&#215;</div>
+                <div class="division" onclick="division()">&#247;</div>
+            </div>
+            <div class="main">
+                <div class="number">
+                    <div onclick="clearResult()">C</div>
+                </div>
+                <div class="equal" onclick="equal()">=</div> 
+            </div>   
+
+        </div>
     </div>
 
-    <div class="main">
-        <div onclick="addition()">TOPLA</div>
-        <div onclick="subtraction()">ÇIKAR</div>
-        <div onclick="multiplication()">ÇARP</div>
-        <div onclick="division()">BÖL</div>    
-    </div>
 
 
-
-
-    <script>
-
-        let input1 = document.getElementById('inp1');
-        let input2 = document.getElementById('inp2');
-        let operator = document.getElementsByClassName('operator');
-        let result = document.getElementById("result");
-
-        function addition(){
-            result.innerHTML = (Number(input1.value) + Number(input2.value)).toFixed(2); 
-            operator[0].innerHTML = '+';
-            operator[1].innerHTML = '=';
-            result.style.visibility = 'visible';
-        }
-        function subtraction(){
-            result.innerHTML = (Number(input1.value) - Number(input2.value)).toFixed(2); 
-            operator[0].innerHTML = '-';
-            operator[1].innerHTML = '=';
-            result.style.visibility = 'visible';
-
-        }
-        function multiplication(){
-            result.innerHTML = (Number(input1.value) * Number(input2.value)).toFixed(2); 
-            operator[0].innerHTML = '*';
-            operator[1].innerHTML = '=';
-            result.style.visibility = 'visible';
-
-        }
-        function division(){
-            result.innerHTML = (Number(input1.value) / Number(input2.value)).toFixed(2);; 
-            operator[0].innerHTML = '/';
-            operator[1].innerHTML = '=';
-            result.style.visibility = 'visible';
-        }
-    </script>
+    <script src="js/index.js"></script>
 </body>
 </html>
