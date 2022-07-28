@@ -99,15 +99,6 @@ let clearResult = () => {
     input2.innerHTML = '';
 }
 
-// click number
-let clickNumber = (event) => {
-    if(result.value.includes('.') && event.target.innerHTML == '.') {
-        return result.value
-    } else {
-        result.value += event.target.innerHTML;
-    }
-}
-
 // using keyboard keys
 let keyboard = (event) => {
     if(event.key == '+' || (input2.value == 'addition' && (event.key == '=' || event.key == 'Enter'))) {
